@@ -1,25 +1,25 @@
 #pragma once
 class Actor;
 class Command;
-
+class Actions;
+extern const char key;
 
 class InputHandler
 {
 public:
 	InputHandler(Actor *actor);
-	void handleInput();
+	Command* handleInput();
+	void mapKeys(
+		char up = 'W',
+		char down = 'S',
+		char right = 'A',
+		char left = 'D');
 private:
-	char UP_KEY = 'W';
-	char DOWN_KEY = 'S';
-	char LEFT_KEY = 'A';
-	char RIGHT_KEY = 'D';
-
-	Command* ButtonUp;
-	Command* ButtonDown;
-	Command* ButtonRight;
-	Command* ButtonLeft;
-
-	Actor* m_Actor;
+	const char UP_KEY = 'W';
+	const char DOWN_KEY = 'S';
+	const char LEFT_KEY = 'A';
+	const char RIGHT_KEY = 'D';
+	Actor* m_Actor = nullptr;
 };
 
 

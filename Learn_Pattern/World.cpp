@@ -1,4 +1,5 @@
 #include "World.h"
+#include "Command.h"
 
 World::World()
 {
@@ -7,22 +8,22 @@ World::World()
 
 void World::creatActor(std::string name, int x, int y)
 {
-	Actors.push_back(new Actor(name, x, y));
+	m_actors.push_back(std::make_unique<Actor>(name, x, y));
 }
 
 Actor* World::getActor(int num)
 {
-	return Actors.at(num);
+	return m_actors.at(num).get();
 }
 
-int World::getActorSize()
+int World::getActorCount()
 {
-	return Actors.size();
+	return m_actors.size();
 }
 
 void World::moveActor()
 {
-	for (auto& actor : Actors)
+	for (auto& actor : m_actors)
 	{
 		actor->handleInput();
 	}

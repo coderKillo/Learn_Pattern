@@ -1,7 +1,10 @@
 #pragma once
 
-#include <vector>
 #include "Actor.h"
+#include <vector>
+#include <memory>
+
+class Actions;
 
 class World
 {
@@ -9,11 +12,11 @@ public:
 	World();
 	void creatActor(std::string name, int x, int y);
 	void moveActor();
-	Actor* getActor(int num);
-	int getActorSize();
+	Actor* getActor(int index);
+	int getActorCount();
 
 private:
-	std::vector<Actor*> Actors;
+	std::vector<std::unique_ptr<Actor>> m_actors;
 };
 
 

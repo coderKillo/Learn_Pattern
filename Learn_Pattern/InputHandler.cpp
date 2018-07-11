@@ -1,7 +1,7 @@
 #include "InputHandler.h"
 #include "Command.h"
 #include "Actor.h"
-#include "stdafx.h"
+#include "Actions.h"
 #include <conio.h>
 
 InputHandler::InputHandler(Actor *actor) :
@@ -10,11 +10,33 @@ InputHandler::InputHandler(Actor *actor) :
 
 }
 
-void InputHandler::handleInput()
+Command* InputHandler::handleInput()
 {
-	char key = getch();
-	if (key == UP_KEY) ButtonUp->execute(m_Actor);
-	else if (key == DOWN_KEY) ButtonDown->execute(m_Actor);
-	else if (key == LEFT_KEY) ButtonLeft->execute(m_Actor);
-	else if (key == RIGHT_KEY) ButtonRight->execute(m_Actor);
+	const char key = _getch();
+
+	if (key == UP_KEY)
+	{
+		return new UpCommand();
+	}
+	else if (key == DOWN_KEY)
+	{
+		return new DownCommand();
+	}
+	else if (key == LEFT_KEY) 
+	{
+		return new LeftCommand();
+	}
+	else if (key == RIGHT_KEY) 
+	{
+		return new RightCommand();
+	}
+	else
+	{
+		return nullptr;
+	}
+}
+
+void InputHandler::mapKeys(char up, char down, char right , char left)
+{
+	//TODO: map key
 }
