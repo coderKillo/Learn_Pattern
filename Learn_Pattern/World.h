@@ -4,7 +4,7 @@
 #include <vector>
 #include <memory>
 
-class Actions;
+class Map;
 
 class World
 {
@@ -13,10 +13,11 @@ public:
 	void creatActor(std::string name, int x, int y);
 	void moveActor();
 	Actor* getActor(int index);
-	int getActorCount();
+    size_t getActorCount();
 
 private:
 	std::vector<std::unique_ptr<Actor>> m_actors;
+    Map m_map;
 };
 
 

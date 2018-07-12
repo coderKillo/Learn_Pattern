@@ -33,3 +33,9 @@ class RightCommand : public Command
 	virtual void execute(Actor *actor);
 	virtual void undon(Actor *actor);
 };
+
+class UndoCommand : public Command
+{
+    virtual void execute(Actor *actor);
+    virtual void undon(Actor *actor);
+};

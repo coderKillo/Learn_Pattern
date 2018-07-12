@@ -40,3 +40,14 @@ void RightCommand::undon(Actor *actor)
 {
 	actor->moveAround(0, -1);
 }
+
+
+void UndoCommand::execute(Actor *actor)
+{
+    actor->undoMoves();
+}
+void UndoCommand::undon(Actor *actor)
+{
+
+}
+

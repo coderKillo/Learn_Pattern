@@ -3,7 +3,7 @@
 
 World::World()
 {
-	creatActor("Player", 0, 0);
+	creatActor("Player1", 0, 0);
 }
 
 void World::creatActor(std::string name, int x, int y)
@@ -16,7 +16,7 @@ Actor* World::getActor(int num)
 	return m_actors.at(num).get();
 }
 
-int World::getActorCount()
+size_t World::getActorCount()
 {
 	return m_actors.size();
 }

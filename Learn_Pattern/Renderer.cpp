@@ -15,8 +15,8 @@ void Renderer::startRender()
 	{
 		Actor* actor = m_world->getActor(i);
 		std::cout <<
-			"Actor: " << actor->getName() <<
-			"Move To: " << actor->getX() <<
+			"Position of " << actor->getName() <<
+			" is " << actor->getX() <<
 			", " << actor->getY() << std::endl;
 	}
 }

@@ -10,15 +10,15 @@ public:
 	InputHandler(Actor *actor);
 	Command* handleInput();
 	void mapKeys(
-		char up = 'W',
-		char down = 'S',
-		char right = 'A',
-		char left = 'D');
+		char up = 'w',
+		char down = 's',
+		char right = 'a',
+		char left = 'd');
 private:
-	const char UP_KEY = 'W';
-	const char DOWN_KEY = 'S';
-	const char LEFT_KEY = 'A';
-	const char RIGHT_KEY = 'D';
+	const char UP_KEY = 'w';
+	const char DOWN_KEY = 's';
+	const char LEFT_KEY = 'a';
+	const char RIGHT_KEY = 'd';
 	Actor* m_Actor = nullptr;
 };
 

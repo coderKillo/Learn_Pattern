@@ -1,7 +1,6 @@
 #include "InputHandler.h"
 #include "Command.h"
 #include "Actor.h"
-#include "Actions.h"
 #include <conio.h>
 
 InputHandler::InputHandler(Actor *actor) :
@@ -30,6 +29,10 @@ Command* InputHandler::handleInput()
 	{
 		return new RightCommand();
 	}
+    else if (key == 'z')
+    {
+        return new UndoCommand();
+    }
 	else
 	{
 		return nullptr;
