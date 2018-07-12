@@ -1,8 +1,7 @@
 #pragma once
 
 #include <vector>
-
-class Terrain;
+#include "Terrain.h"
 
 class Map
 {

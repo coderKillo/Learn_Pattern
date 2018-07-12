@@ -1,10 +1,9 @@
 #pragma once
 
 #include "Actor.h"
+#include "Map.h"
 #include <vector>
 #include <memory>
-
-class Map;
 
 class World
 {
@@ -17,7 +16,7 @@ public:
 
 private:
 	std::vector<std::unique_ptr<Actor>> m_actors;
-    Map m_map;
+    Map m_map{ 10,10 };
 };
 
 
